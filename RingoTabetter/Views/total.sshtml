@@ -1,0 +1,5 @@
+@Master['_master.sshtml']
+
+@Section['Scripts']
+    <script src="../../Scripts/total.js"></script>
+@EndSection

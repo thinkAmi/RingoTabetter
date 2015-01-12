@@ -11,29 +11,26 @@ namespace RingoTabetter.Modules
 {
     public class HomeModule : NancyModule
     {
-        public string BaseLocalUrl = @"http://localhost:9876";
+        public string BaseUrl = @"https://ringo-tabetter-api.herokuapp.com/api/v1";
 
 
         public HomeModule()
         {
-            Get["/"] = _ => "Hello World";
-
-            Get["/total"] = _ =>
+            Get["/"] = _ =>
             {
-                var response = RequestResource("total");
-                return response;
+                return View["total"];
             };
+
 
             Get["/month"] = _ =>
             {
-                var response = RequestResource("month");
-                return response;
+                return View["month"];
             };
         }
 
         public Response RequestResource(string resource)
         {
-            var client = new RestClient(BaseLocalUrl);
+            var client = new RestClient(BaseUrl);
             var request = new RestRequest(resource, Method.GET);
             var result = client.Execute(request);
             var response = Response.AsText(result.Content);
