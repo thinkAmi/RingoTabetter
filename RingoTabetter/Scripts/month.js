@@ -50,11 +50,11 @@ $(function () {
     });
 
 
-    $.getJSON('https://ringo-tabetter.herokuapp.com/api/jsonp/month?callback=?', function (res) {
+    $.getJSON('https://ringo-tabetter-api.herokuapp.com/api/v1/month?callback=?', function (res) {
         $.each(res, function (i, json) {
             chart.addSeries({
                 name: json['name'],
-                data: json['amount'],
+                data: json['quantities'],
                 color: json['color']
             })
         });

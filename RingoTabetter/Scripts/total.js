@@ -38,11 +38,11 @@ $(function () {
     });
 
     
-    $.getJSON('https://ringo-tabetter.herokuapp.com/api/jsonp/total?callback=?', function (res) {
+    $.getJSON('https://ringo-tabetter-api.herokuapp.com/api/v1/total?callback=?', function (res) {
         $.each(res, function (i, json) {
             chart.series[0].addPoint({
                 name: json['name'],
-                y: json['amount'],
+                y: json['quantity'],
                 color: json['color']
             });
         });
