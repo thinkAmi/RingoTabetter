@@ -56,9 +56,15 @@ netsh http add urlacl url=http://+:8765/ user=<UserName>
 
 　  
 ## Heroku
-`git clone`して、Herokuにpushすれば動作します。
+### 手動で構築する場合
+1. `git clone`
+2. `heroku create <アプリ名>`
+3. `heroku config:add BUILDPACK_URL=https://github.com/friism/heroku-buildpack-mono`
+4. `git push heroku master`
 
-あるいは、以下のHeroku Buttonでデプロイします。  
+　  
+### Heroku buttonを使う場合
+以下をクリックしてデプロイします。
 <p><a href="https://heroku.com/deploy?template=https://github.com/thinkAmi/RingoTabetter"> <img alt="Deploy" src="https://www.herokucdn.com/deploy/button.png"></a></p>
 
 　  
